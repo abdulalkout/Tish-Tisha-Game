@@ -4,6 +4,10 @@ class Player {
     this.score = score;
     this.rocks = 3;
   }
+
+  decreaseRocks() {
+    this.rocks--;
+  }
 }
 
 class Computer {
@@ -20,6 +24,10 @@ class Computer {
     // const rockImgSelector = document.querySelector("")
     // rockImgSelector.appendChild(rockImg);
   }
+
+  decreaseRocks() {
+    this.rocks--;
+  }
 }
 
 const plyer1 = new Player("abdul");
@@ -32,6 +40,8 @@ let BoxId = 0;
 //--Queries --//
 const tishTishaBoxs = document.querySelectorAll(".tishTishaBox");
 const player1RocksArr = document.querySelectorAll(".plyer1Rocks");
+
+const player1Button = document.querySelector("#placeTheRocks");
 
 const box1 = document.getElementById("1");
 const box2 = document.getElementById("2");
@@ -78,9 +88,9 @@ function selectRockBox(box, imgClassName, boxNumber) {
     let rockImg = document.querySelector(imgClassName);
     if (tishTishaBoxs[boxNumber].getElementsByTagName("img").length > 0) {
       console.log("there is an img");
-      return;
+    } else {
+      tishTishaBoxs[boxNumber].appendChild(rockImg);
     }
-    tishTishaBoxs[boxNumber].appendChild(rockImg);
   });
 }
 
@@ -95,6 +105,16 @@ function playerPlaces(imgClassName) {
   selectRockBox(boxsArr[7], imgClassName, 7);
   selectRockBox(boxsArr[8], imgClassName, 8);
 }
+
+function playerButton(imgClassName) {
+  if (plyer1.rocks > 0) {
+    playerPlaces(imgClassName);
+    plyer1.decreaseRocks();
+    console.log(plyer1.rocks);
+  } else {
+    // player1Button.style.display = "none";
+  }
+}
 //--Event Listeners--//
 //--Event Listener for all Boxs--//
 
@@ -105,10 +125,9 @@ console.log(tishTishaBoxs);
 // }
 
 // -- Round Loop--//
-while (round < 4) {
-  playerPlaces(".rockImg");
-  //   selectRocksPlaces(".rockImg");
-  //   selectRocksPlaces(".compRockImg");
-  break;
-  round++;
-}
+// while (round < 4) {
+//   //   selectRocksPlaces(".rockImg");
+//   //   selectRocksPlaces(".compRockImg");
+//   break;
+//   round++;
+// }
