@@ -176,11 +176,12 @@ function checkImptySpace(imgIdToMoveFrom, arrowDiriction) {
   }
 }
 
-function moveRock(imgIdToMoveFrom, box5) {
+function moveRock(imgIdToMoveFrom, box) {
   let thisBox = document.getElementById(imgIdToMoveFrom);
   thisBox.textContent = imgIdToMoveFrom;
   let rock = creatNewRock();
-  box5.appendChild(rock);
+  box.textContent = "";
+  box.appendChild(rock);
 }
 
 function imageMoveHandle(e) {
