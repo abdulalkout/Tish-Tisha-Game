@@ -116,6 +116,7 @@ function creatNewRock() {
   newRock.setAttribute("class", "rockImg");
   let newRockParent = document.querySelector(".plyer1Rocks");
   newRockParent.appendChild(newRock);
+  return newRock;
 }
 
 function checkRocksShape(
@@ -175,28 +176,45 @@ function checkImptySpace(imgIdToMoveFrom, arrowDiriction) {
   }
 }
 
+function moveRock(imgIdToMoveFrom, box5) {
+  let thisBox = document.getElementById(imgIdToMoveFrom);
+  thisBox.textContent = imgIdToMoveFrom;
+  let rock = creatNewRock();
+  box5.appendChild(rock);
+}
+
 function imageMoveHandle(e) {
   imgIdToMoveFrom = e.target.parentNode.id;
-  console.log(imgIdToMoveFrom);
   e.stopPropagation();
-  console.log("imag");
   document.addEventListener("keydown", (evt) => {
-    if (evt.key === "5") {
-      // Handle the up arrow key
-      console.log("Up arrow key pressed");
-      let thisBox = document.getElementById(imgIdToMoveFrom);
-      thisBox.textContent = "5";
-      creatNewRock();
-      //   checkImptySpace(imgIdToMoveFrom, "up");
-    } else if (evt.key === "ArrowDown") {
-      // Handle the down arrow key
-      console.log("Down arrow key pressed");
-    } else if (evt.key === "ArrowLeft") {
-      // Handle the left arrow key
-      console.log("Left arrow key pressed");
-    } else if (evt.key === "ArrowRight") {
-      // Handle the right arrow key
-      console.log("Right arrow key pressed");
+    switch (evt.key) {
+      case "1":
+        moveRock(imgIdToMoveFrom, box1);
+        break;
+      case "2":
+        moveRock(imgIdToMoveFrom, box2);
+        break;
+      case "3":
+        moveRock(imgIdToMoveFrom, box3);
+        break;
+      case "4":
+        moveRock(imgIdToMoveFrom, box4);
+        break;
+      case "5":
+        moveRock(imgIdToMoveFrom, box5);
+        break;
+      case "6":
+        moveRock(imgIdToMoveFrom, box6);
+        break;
+      case "7":
+        moveRock(imgIdToMoveFrom, box7);
+        break;
+      case "8":
+        moveRock(imgIdToMoveFrom, box8);
+        break;
+      case "9":
+        moveRock(imgIdToMoveFrom, box9);
+        break;
     }
   });
 }
