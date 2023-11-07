@@ -163,39 +163,42 @@ function checkRocksShape(
   }
 }
 
-function imageMoveHandle(e) {
-  //   e.stopImmediatePropagation();
-  console.log("imag");
-  switch (e.key) {
-    case "ArrowLeft":
-      // Left pressed
-      console.log("left");
-      break;
-    case "ArrowRight":
-      // Right pressed
-      break;
-    case "ArrowUp":
-      // Up pressed
-      break;
-    case "ArrowDown":
-      // Down pressed
-      break;
+function checkImptySpace(imgIdToMoveFrom, arrowDiriction) {
+  if (arrowDiriction === "up") {
+    if (
+      imgIdToMoveFrom === 1 ||
+      imgIdToMoveFrom === 2 ||
+      imgIdToMoveFrom === 3
+    ) {
+      console.log("cant go up");
+    }
   }
-  //   e = e || window.event;
+}
 
-  //   if (e.keyCode === "38") {
-  //     // up arrow
-  //     console.log("up");
-  //   } else if (e.keyCode === "40") {
-  //     // down arrow
-  //     console.log("Down");
-  //   } else if (e.keyCode === "37") {
-  //     // left arrow
-  //     console.log("left");
-  //   } else if (e.keyCode === "39") {
-  //     // right arrow
-  //     console.log("right");
-  //   }
+function imageMoveHandle(e) {
+  imgIdToMoveFrom = e.target.parentNode.id;
+  console.log(imgIdToMoveFrom);
+  e.stopPropagation();
+  console.log("imag");
+  document.addEventListener("keydown", (evt) => {
+    if (evt.key === "5") {
+      // Handle the up arrow key
+      console.log("Up arrow key pressed");
+      let thisBox = document.getElementById(imgIdToMoveFrom);
+      thisBox.textContent = "5";
+      creatNewRock();
+      //   checkImptySpace(imgIdToMoveFrom, "up");
+    } else if (evt.key === "ArrowDown") {
+      // Handle the down arrow key
+      console.log("Down arrow key pressed");
+    } else if (evt.key === "ArrowLeft") {
+      // Handle the left arrow key
+      console.log("Left arrow key pressed");
+    } else if (evt.key === "ArrowRight") {
+      // Handle the right arrow key
+      console.log("Right arrow key pressed");
+    }
+  });
 }
 
 function plyerRocksImgListener() {
@@ -212,11 +215,10 @@ console.log(tishTishaBoxs);
 while (round < 3) {
   selectRocksPlaces(player1Class);
   plyerRocksImgListener();
-  //   selectRocksPlaces(player2Class);
-  //   let classB = ".rockImg";
-  //   playerPlaces(".rockImg");
-  //   playerPlaces(".compRockImg");
-  //   break;
   round++;
   console.log(`round : ${round}`);
 }
+
+//---Code Googled--//
+// for arrow keys --//
+// https://plainenglish.io/blog/how-to-detect-arrow-key-presses-in-javascript-2c38192de0e8
