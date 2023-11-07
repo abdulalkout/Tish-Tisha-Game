@@ -80,10 +80,15 @@ function selectPlacesHandler(evt) {
     let rockImgSelector = document.getElementById(`${boxID}`);
     const rockImg = document.querySelector(currentplayerClass);
     rockImgSelector.appendChild(rockImg);
+    checkRocksShape(
+      currentplayerClass,
+      rockImgSelector,
+      rockImg,
+      currentPlayer
+    );
     box.removeEventListener("click", selectPlacesHandler);
     currentPlayer.decreaseRocks();
     console.log(currentPlayer.rocks);
-    checkRocksShape(currentplayerClass, rockImgSelector);
     if (currentPlayer.rocks <= 0) {
       console.log("rocks finished");
       currentPlayer = player2;
@@ -103,15 +108,56 @@ function disableFunction() {
   console.log(enableSelectPlacesHandler);
 }
 
-function checkRocksShape(currentplayerClass, rockImgSelector) {
+function creatNewRock() {
+  let newRock = document.createElement("img");
+  newRock.setAttribute("src", "https://i.gifer.com/1Vho.gif");
+  newRock.setAttribute("class", "rockImg");
+  let newRockParent = document.querySelector(".plyer1Rocks");
+  newRockParent.appendChild(newRock);
+}
+
+function checkRocksShape(
+  currentplayerClass,
+  rockImgSelector,
+  rockImg,
+  currentPlayer
+) {
   if (currentplayerClass === ".rockImg") {
+    // Check rows
     if (
       box1.getElementsByTagName("img").length > 0 &&
       box2.getElementsByTagName("img").length > 0 &&
       box3.getElementsByTagName("img").length > 0
     ) {
       console.log("cant do that");
+      rockImgSelector.removeChild(rockImg);
+      currentPlayer.rocks++;
+      creatNewRock();
     }
+    if (
+      box4.getElementsByTagName("img").length > 0 &&
+      box5.getElementsByTagName("img").length > 0 &&
+      box6.getElementsByTagName("img").length > 0
+    ) {
+      console.log("cant do that");
+    }
+    if (
+      box7.getElementsByTagName("img").length > 0 &&
+      box8.getElementsByTagName("img").length > 0 &&
+      box9.getElementsByTagName("img").length > 0
+    ) {
+      console.log("cant do that");
+    }
+    //check Culomns
+    if (
+      box1.getElementsByTagName("img").length > 0 &&
+      box3.getElementsByTagName("img").length > 0 &&
+      box6.getElementsByTagName("img").length > 0
+    ) {
+      console.log("cant do that");
+    }
+  } else {
+    return true;
   }
 }
 
