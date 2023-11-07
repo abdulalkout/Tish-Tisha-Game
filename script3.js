@@ -46,7 +46,9 @@ const tishTishaBoxs = document.querySelectorAll(".tishTishaBox");
 const player1RocksArr = document.querySelectorAll(".plyer1Rocks");
 
 const player1Button = document.querySelector("#placeTheRocks");
-// const nextButton = document.querySelector("#nextPlayer");
+
+const plyer1RocksImgArr = document.querySelectorAll(".rockImg");
+const plyer2RocksImgArr = document.querySelector(".plyer2Rocks");
 
 const box1 = document.getElementById("1");
 const box2 = document.getElementById("2");
@@ -161,6 +163,46 @@ function checkRocksShape(
   }
 }
 
+function imageMoveHandle(e) {
+  //   e.stopImmediatePropagation();
+  console.log("imag");
+  switch (e.key) {
+    case "ArrowLeft":
+      // Left pressed
+      console.log("left");
+      break;
+    case "ArrowRight":
+      // Right pressed
+      break;
+    case "ArrowUp":
+      // Up pressed
+      break;
+    case "ArrowDown":
+      // Down pressed
+      break;
+  }
+  //   e = e || window.event;
+
+  //   if (e.keyCode === "38") {
+  //     // up arrow
+  //     console.log("up");
+  //   } else if (e.keyCode === "40") {
+  //     // down arrow
+  //     console.log("Down");
+  //   } else if (e.keyCode === "37") {
+  //     // left arrow
+  //     console.log("left");
+  //   } else if (e.keyCode === "39") {
+  //     // right arrow
+  //     console.log("right");
+  //   }
+}
+
+function plyerRocksImgListener() {
+  plyer1RocksImgArr.forEach((rock) => {
+    rock.addEventListener("click", imageMoveHandle);
+  });
+}
 //--Event Listeners--//
 //--Event Listener for all Boxs--//
 
@@ -169,6 +211,7 @@ console.log(tishTishaBoxs);
 // -- Round Loop--//
 while (round < 3) {
   selectRocksPlaces(player1Class);
+  plyerRocksImgListener();
   //   selectRocksPlaces(player2Class);
   //   let classB = ".rockImg";
   //   playerPlaces(".rockImg");
