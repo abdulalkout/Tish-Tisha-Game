@@ -48,15 +48,15 @@ const player1RocksArr = document.querySelectorAll(".plyer1Rocks");
 const player1Button = document.querySelector("#placeTheRocks");
 // const nextButton = document.querySelector("#nextPlayer");
 
-// const box1 = document.getElementById("1");
-// const box2 = document.getElementById("2");
-// const box3 = document.getElementById("3");
-// const box4 = document.getElementById("4");
-// const box5 = document.getElementById("5");
-// const box6 = document.getElementById("6");
-// const box7 = document.getElementById("7");
-// const box8 = document.getElementById("8");
-// const box9 = document.getElementById("9");
+const box1 = document.getElementById("1");
+const box2 = document.getElementById("2");
+const box3 = document.getElementById("3");
+const box4 = document.getElementById("4");
+const box5 = document.getElementById("5");
+const box6 = document.getElementById("6");
+const box7 = document.getElementById("7");
+const box8 = document.getElementById("8");
+const box9 = document.getElementById("9");
 
 const boxsArr = [
   document.getElementById("1"),
@@ -71,29 +71,47 @@ const boxsArr = [
 ];
 
 //--Functions--//
-if (enableSelectPlacesHandler == true) {
-  function selectPlacesHandler(evt) {
-    let box = evt.target;
-    if (box.getElementsByTagName("img").length > 0) {
-      console.log("there is a rock");
-    } else {
-      let boxID = `${evt.target.id}`;
-      let rockImgSelector = document.getElementById(`${boxID}`);
-      const rockImg = document.querySelector(currentplayerClass);
-      rockImgSelector.appendChild(rockImg);
-      box.removeEventListener("click", selectPlacesHandler);
-      currentPlayer.decreaseRocks();
-      console.log(currentPlayer.rocks);
-      if (currentPlayer.rocks <= 0) {
-        console.log("rocks finished");
-      }
+function selectPlacesHandler(evt) {
+  let box = evt.target;
+  if (box.getElementsByTagName("img").length > 0) {
+    console.log("there is a rock");
+  } else {
+    let boxID = `${evt.target.id}`;
+    let rockImgSelector = document.getElementById(`${boxID}`);
+    const rockImg = document.querySelector(currentplayerClass);
+    rockImgSelector.appendChild(rockImg);
+    box.removeEventListener("click", selectPlacesHandler);
+    currentPlayer.decreaseRocks();
+    console.log(currentPlayer.rocks);
+    checkRocksShape(currentplayerClass, rockImgSelector);
+    if (currentPlayer.rocks <= 0) {
+      console.log("rocks finished");
+      currentPlayer = player2;
+      currentplayerClass = player2Class;
     }
   }
+}
 
-  function selectRocksPlaces(classImg, boxPlaceContent) {
-    tishTishaBoxs.forEach((box) => {
-      box.addEventListener("click", selectPlacesHandler);
-    });
+function selectRocksPlaces(classImg, boxPlaceContent) {
+  tishTishaBoxs.forEach((box) => {
+    box.addEventListener("click", selectPlacesHandler);
+  });
+}
+
+function disableFunction() {
+  enableSelectPlacesHandler = false;
+  console.log(enableSelectPlacesHandler);
+}
+
+function checkRocksShape(currentplayerClass, rockImgSelector) {
+  if (currentplayerClass === ".rockImg") {
+    if (
+      box1.getElementsByTagName("img").length > 0 &&
+      box2.getElementsByTagName("img").length > 0 &&
+      box3.getElementsByTagName("img").length > 0
+    ) {
+      console.log("cant do that");
+    }
   }
 }
 
@@ -103,12 +121,13 @@ if (enableSelectPlacesHandler == true) {
 console.log(tishTishaBoxs);
 
 // -- Round Loop--//
-while (round < 4) {
+while (round < 3) {
   selectRocksPlaces(player1Class);
-  selectRocksPlaces(player2Class);
+  //   selectRocksPlaces(player2Class);
   //   let classB = ".rockImg";
   //   playerPlaces(".rockImg");
   //   playerPlaces(".compRockImg");
-  break;
+  //   break;
   round++;
+  console.log(`round : ${round}`);
 }
