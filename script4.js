@@ -269,37 +269,51 @@ function plyerRocksImgListener() {
 const rock1 = document.getElementById("Player1Rock1");
 const rock2 = document.getElementById("Player1Rock2");
 const rock3 = document.getElementById("Player1Rock3");
+const rockCheckArr = [
+  { name: "rock1", rock: document.getElementById("Player1Rock1") },
+  { name: "rock2", rock: document.getElementById("Player1Rock2") },
+  { name: "rock3", rock: document.getElementById("Player1Rock3") },
+];
 
-function placeRock(rockIdToMove, rock) {
+function placeRock(rock) {
   document.addEventListener("keydown", (evt) => {
-    switch (evt.key) {
-      case "1":
-        box1.appendChild(rock);
-        break;
-      case "2":
-        moveRock(boxIdToMoveFrom, box2, rockIdToMove);
-        break;
-      case "3":
-        moveRock(boxIdToMoveFrom, box3, rockIdToMove);
-        break;
-      case "4":
-        moveRock(boxIdToMoveFrom, box4, rockIdToMove);
-        break;
-      case "5":
-        moveRock(boxIdToMoveFrom, box5, rockIdToMove);
-        break;
-      case "6":
-        moveRock(boxIdToMoveFrom, box6, rockIdToMove);
-        break;
-      case "7":
-        moveRock(boxIdToMoveFrom, box7, rockIdToMove);
-        break;
-      case "8":
-        moveRock(boxIdToMoveFrom, box8, rockIdToMove);
-        break;
-      case "9":
-        moveRock(boxIdToMoveFrom, box9, rockIdToMove);
-        break;
+    let rockArr = rockCheckArr.filter(function (searchRock) {
+      if (searchRock.name === rock) {
+        return searchRock;
+      }
+    });
+
+    console.log(rockArr[1]);
+    if (rock === rockArr[0].name) {
+      switch (evt.key) {
+        case "1":
+          box1.appendChild(rockArr[0].rock);
+          break;
+        case "2":
+          box2.appendChild(rockArr[0].rock);
+          break;
+        case "3":
+          box3.appendChild(rockArr[0].rock);
+          break;
+        case "4":
+          box4.appendChild(rockArr[0].rock);
+          break;
+        case "5":
+          box5.appendChild(rockArr[0].rock);
+          break;
+        case "6":
+          box6.appendChild(rockArr[0].rock);
+          break;
+        case "7":
+          box7.appendChild(rockArr[0].rock);
+          break;
+        case "8":
+          box8.appendChild(rockArr[0].rock);
+          break;
+        case "9":
+          box9.appendChild(rockArr[0].rock);
+          break;
+      }
     }
   });
 }
