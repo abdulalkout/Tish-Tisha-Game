@@ -79,6 +79,7 @@ function selectPlacesHandler(evt) {
   let box = evt.target;
   if (box.getElementsByTagName("img").length > 0) {
     console.log("there is a rock");
+    return;
   } else {
     let boxID = `${evt.target.id}`;
     let rockImgSelector = document.getElementById(`${boxID}`);
@@ -90,18 +91,19 @@ function selectPlacesHandler(evt) {
       rockImg,
       currentPlayer
     );
-    box.removeEventListener("click", selectPlacesHandler);
+    // box.removeEventListener("click", selectPlacesHandler);
     currentPlayer.decreaseRocks();
-    console.log(currentPlayer.rocks);
+    // console.log(currentPlayer.rocks);
     if (currentPlayer.rocks <= 0) {
       console.log("rocks finished");
       currentPlayer = player2;
       currentplayerClass = player2Class;
     }
   }
+  box.removeEventListener("click", selectPlacesHandler);
 }
 
-function selectRocksPlaces(classImg) {
+function selectRocksPlaces() {
   tishTishaBoxs.forEach((box) => {
     box.addEventListener("click", selectPlacesHandler);
   });
@@ -115,8 +117,8 @@ function disableFunction() {
 function creatNewRock(currentplayerClass) {
   let newRock = document.createElement("img");
   newRock.setAttribute("src", "https://i.gifer.com/1Vho.gif");
-  const newCurrentplayerClass = currentplayerClass.slice(1);
-  newRock.setAttribute("class", newCurrentplayerClass);
+  //   const newCurrentplayerClass = currentplayerClass.slice(1);
+  newRock.setAttribute("class", "rockImg");
   let newRockParent = document.querySelector(".plyer1Rocks");
   newRockParent.appendChild(newRock);
   return newRock;
@@ -140,8 +142,7 @@ function checkRocksShape(
         rockImgSelector.removeChild(rockImg);
         currentPlayer.rocks++;
         creatNewRock(currentplayerClass);
-      }
-      if (
+      } else if (
         box4.getElementsByTagName("img").length > 0 &&
         box5.getElementsByTagName("img").length > 0 &&
         box6.getElementsByTagName("img").length > 0
@@ -151,26 +152,23 @@ function checkRocksShape(
         rockImgSelector.removeChild(rockImg);
         currentPlayer.rocks++;
         creatNewRock();
-      }
-      if (
+      } else if (
         box7.getElementsByTagName("img").length > 0 &&
         box8.getElementsByTagName("img").length > 0 &&
         box9.getElementsByTagName("img").length > 0
       ) {
         console.log("cant do that");
-      }
-      //check Culomns
-      if (
+      } else if (
         box1.getElementsByTagName("img").length > 0 &&
-        box3.getElementsByTagName("img").length > 0 &&
-        box6.getElementsByTagName("img").length > 0
+        box4.getElementsByTagName("img").length > 0 &&
+        box7.getElementsByTagName("img").length > 0
       ) {
         console.log("cant do that");
       }
       //Change class for player 2
-      currentplayerClass = player2Class;
+      // currentplayerClass = player2Class;
     } else {
-      return true;
+      return;
     }
   });
 }
@@ -238,17 +236,13 @@ function plyerRocksImgListener() {
 }
 //--Event Listeners--//
 //--Event Listener for all Boxs--//
-
 console.log(tishTishaBoxs);
-
+selectRocksPlaces();
+plyerRocksImgListener();
 // -- Round Loop--//
-while (round < 3) {
-  selectRocksPlaces(player1Class);
-  plyerRocksImgListener();
-  round++;
-  console.log(`round : ${round}`);
-}
+// while (round < 3) {
+//   round++;
+//   console.log(`round : ${round}`);
+// }
 
 //---Code Googled--//
-// for arrow keys --//
-// https://plainenglish.io/blog/how-to-detect-arrow-key-presses-in-javascript-2c38192de0e8
