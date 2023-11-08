@@ -38,6 +38,7 @@ const player2Class = ".compRockImg";
 let currentplayerClass = player1Class;
 let currentPlayer = player1;
 const playerClassArr = [player1Class, player2Class];
+const plyerClassesNamesArr = ["rockImg", "compRockImg"];
 let rockNumber = 1;
 let round = 1;
 let enableSelectPlacesHandler = true;
@@ -114,10 +115,7 @@ function disableFunction() {
 function creatNewRock(currentplayerClass) {
   let newRock = document.createElement("img");
   newRock.setAttribute("src", "https://i.gifer.com/1Vho.gif");
-  let newCurrentplayerClass = currentplayerClass.substr(
-    1,
-    currentplayerClass.length - 1
-  );
+  const newCurrentplayerClass = currentplayerClass.slice(1);
   newRock.setAttribute("class", newCurrentplayerClass);
   let newRockParent = document.querySelector(".plyer1Rocks");
   newRockParent.appendChild(newRock);
