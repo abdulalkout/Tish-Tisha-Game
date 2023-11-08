@@ -37,6 +37,7 @@ const player1Class = ".rockImg";
 const player2Class = ".compRockImg";
 let currentplayerClass = player1Class;
 let currentPlayer = player1;
+const playerClassArr = [player1Class, player2Class];
 let rockNumber = 1;
 let round = 1;
 let enableSelectPlacesHandler = true;
@@ -80,7 +81,7 @@ function selectPlacesHandler(evt) {
   } else {
     let boxID = `${evt.target.id}`;
     let rockImgSelector = document.getElementById(`${boxID}`);
-    const rockImg = document.querySelector(currentplayerClass);
+    let rockImg = document.querySelector(currentplayerClass);
     rockImgSelector.appendChild(rockImg);
     checkRocksShape(
       currentplayerClass,
@@ -99,7 +100,7 @@ function selectPlacesHandler(evt) {
   }
 }
 
-function selectRocksPlaces(classImg, boxPlaceContent) {
+function selectRocksPlaces(classImg) {
   tishTishaBoxs.forEach((box) => {
     box.addEventListener("click", selectPlacesHandler);
   });
@@ -110,10 +111,14 @@ function disableFunction() {
   console.log(enableSelectPlacesHandler);
 }
 
-function creatNewRock() {
+function creatNewRock(currentplayerClass) {
   let newRock = document.createElement("img");
   newRock.setAttribute("src", "https://i.gifer.com/1Vho.gif");
-  newRock.setAttribute("class", "rockImg");
+  let newCurrentplayerClass = currentplayerClass.substr(
+    1,
+    currentplayerClass.length - 1
+  );
+  newRock.setAttribute("class", newCurrentplayerClass);
   let newRockParent = document.querySelector(".plyer1Rocks");
   newRockParent.appendChild(newRock);
   return newRock;
@@ -125,43 +130,51 @@ function checkRocksShape(
   rockImg,
   currentPlayer
 ) {
-  if (currentplayerClass === ".rockImg") {
-    // Check rows
-    if (
-      box1.getElementsByTagName("img").length > 0 &&
-      box2.getElementsByTagName("img").length > 0 &&
-      box3.getElementsByTagName("img").length > 0
-    ) {
-      console.log("cant do that");
-      rockImgSelector.removeChild(rockImg);
-      currentPlayer.rocks++;
-      creatNewRock();
+  playerClassArr.forEach((playerClass) => {
+    if (currentplayerClass === playerClass) {
+      // Check rows
+      if (
+        box1.getElementsByTagName("img").length > 0 &&
+        box2.getElementsByTagName("img").length > 0 &&
+        box3.getElementsByTagName("img").length > 0
+      ) {
+        console.log("cant do that");
+        rockImgSelector.removeChild(rockImg);
+        currentPlayer.rocks++;
+        creatNewRock(currentplayerClass);
+      }
+      if (
+        box4.getElementsByTagName("img").length > 0 &&
+        box5.getElementsByTagName("img").length > 0 &&
+        box6.getElementsByTagName("img").length > 0
+      ) {
+        console.log("cant do that");
+        console.log("cant do that");
+        rockImgSelector.removeChild(rockImg);
+        currentPlayer.rocks++;
+        creatNewRock();
+      }
+      if (
+        box7.getElementsByTagName("img").length > 0 &&
+        box8.getElementsByTagName("img").length > 0 &&
+        box9.getElementsByTagName("img").length > 0
+      ) {
+        console.log("cant do that");
+      }
+      //check Culomns
+      if (
+        box1.getElementsByTagName("img").length > 0 &&
+        box3.getElementsByTagName("img").length > 0 &&
+        box6.getElementsByTagName("img").length > 0
+      ) {
+        console.log("cant do that");
+      }
+      //Change class for player 2
+      currentplayerClass = player2Class;
+    } else {
+      return true;
     }
-    if (
-      box4.getElementsByTagName("img").length > 0 &&
-      box5.getElementsByTagName("img").length > 0 &&
-      box6.getElementsByTagName("img").length > 0
-    ) {
-      console.log("cant do that");
-    }
-    if (
-      box7.getElementsByTagName("img").length > 0 &&
-      box8.getElementsByTagName("img").length > 0 &&
-      box9.getElementsByTagName("img").length > 0
-    ) {
-      console.log("cant do that");
-    }
-    //check Culomns
-    if (
-      box1.getElementsByTagName("img").length > 0 &&
-      box3.getElementsByTagName("img").length > 0 &&
-      box6.getElementsByTagName("img").length > 0
-    ) {
-      console.log("cant do that");
-    }
-  } else {
-    return true;
-  }
+  });
 }
 
 function checkImptySpace(imgIdToMoveFrom, arrowDiriction) {
