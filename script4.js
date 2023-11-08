@@ -210,10 +210,12 @@ function checkImptySpace(imgIdToMoveFrom, arrowDiriction) {
 function moveRock(boxIdToMoveFrom, box, rockIdToMove) {
   let thisBox = document.getElementById(boxIdToMoveFrom);
   thisBox.textContent = boxIdToMoveFrom;
-  let rock = document.getElementById(`${rockIdToMove}`);
+  const rock = document.getElementById(rockIdToMove);
   console.log(rockIdToMove);
   //   box.textContent = "";
-  box.appendChild(rock);
+  if (rock) {
+    box.appendChild(rock);
+  }
 }
 
 function imageMoveHandle(e) {
@@ -263,11 +265,51 @@ function plyerRocksImgListener() {
   //   currentPlayerRockArr = plyer2RocksImgArr;
   //   console.log(currentPlayerRockArr);
 }
+
+const rock1 = document.getElementById("Player1Rock1");
+const rock2 = document.getElementById("Player1Rock2");
+const rock3 = document.getElementById("Player1Rock3");
+
+function placeRock(rockIdToMove, rock) {
+  document.addEventListener("keydown", (evt) => {
+    switch (evt.key) {
+      case "1":
+        box1.appendChild(rock);
+        break;
+      case "2":
+        moveRock(boxIdToMoveFrom, box2, rockIdToMove);
+        break;
+      case "3":
+        moveRock(boxIdToMoveFrom, box3, rockIdToMove);
+        break;
+      case "4":
+        moveRock(boxIdToMoveFrom, box4, rockIdToMove);
+        break;
+      case "5":
+        moveRock(boxIdToMoveFrom, box5, rockIdToMove);
+        break;
+      case "6":
+        moveRock(boxIdToMoveFrom, box6, rockIdToMove);
+        break;
+      case "7":
+        moveRock(boxIdToMoveFrom, box7, rockIdToMove);
+        break;
+      case "8":
+        moveRock(boxIdToMoveFrom, box8, rockIdToMove);
+        break;
+      case "9":
+        moveRock(boxIdToMoveFrom, box9, rockIdToMove);
+        break;
+    }
+  });
+}
 //--Event Listeners--//
 //--Event Listener for all Boxs--//
 console.log(tishTishaBoxs);
-selectRocksPlaces();
-plyerRocksImgListener();
+
+// selectRocksPlaces();
+// plyerRocksImgListener();
+
 // -- Round Loop--//
 // while (round < 3) {
 //   round++;
