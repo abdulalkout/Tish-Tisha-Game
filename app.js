@@ -46,12 +46,12 @@ let currentClass = player1Class;
 const box1 = document.getElementById("a1");
 const box2 = document.getElementById("a2");
 const box3 = document.getElementById("a3");
-const box4 = document.getElementById("b4");
-const box5 = document.getElementById("b5");
-const box6 = document.getElementById("b6");
-const box7 = document.getElementById("c7");
-const box8 = document.getElementById("c8");
-const box9 = document.getElementById("c9");
+const box4 = document.getElementById("b1");
+const box5 = document.getElementById("b2");
+const box6 = document.getElementById("b3");
+const box7 = document.getElementById("c1");
+const box8 = document.getElementById("c2");
+const box9 = document.getElementById("c3");
 
 const boxsArr = [
   document.getElementById("a1"),
@@ -137,8 +137,7 @@ const winTheRound = () => {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
-  }
-  if (
+  } else if (
     box4.getElementsByTagName("div").length > 0 &&
     box5.getElementsByTagName("div").length > 0 &&
     box6.getElementsByTagName("div").length > 0
@@ -146,8 +145,7 @@ const winTheRound = () => {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
-  }
-  if (
+  } else if (
     box7.getElementsByTagName("div").length > 0 &&
     box8.getElementsByTagName("div").length > 0 &&
     box9.getElementsByTagName("div").length > 0
@@ -155,12 +153,26 @@ const winTheRound = () => {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
-  }
-  //check Culomns
-  if (
+  } else if (
     box1.getElementsByTagName("div").length > 0 &&
-    box3.getElementsByTagName("div").length > 0 &&
-    box6.getElementsByTagName("div").length > 0
+    box4.getElementsByTagName("div").length > 0 &&
+    box7.getElementsByTagName("div").length > 0
+  ) {
+    console.log(one);
+    console.log(box1.getElementsByClassName(currentClass));
+    console.log(`winnn ${player1}`);
+  } else if (
+    box8.getElementsByTagName("div").length > 0 &&
+    box5.getElementsByTagName("div").length > 0 &&
+    box2.getElementsByTagName("div").length > 0
+  ) {
+    console.log(one);
+    console.log(box1.getElementsByClassName(currentClass));
+    console.log(`winnn ${player1}`);
+  } else if (
+    box9.getElementsByTagName("div").length > 0 &&
+    box6.getElementsByTagName("div").length > 0 &&
+    box3.getElementsByTagName("div").length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
