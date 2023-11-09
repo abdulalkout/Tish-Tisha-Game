@@ -35,33 +35,58 @@ class Computer {
 //-----------------Initiate Variables -------------------------//
 const player1 = new Player("Abdul");
 const player2 = new Player("Player");
+const player1Class = "rounded";
+const player2Class = "square";
 let currentRock;
 let round = 1;
 let currentPlayer = player1;
 let moveHereState = false;
+let currentClass = player1Class;
+
+const box1 = document.getElementById("a1");
+const box2 = document.getElementById("a2");
+const box3 = document.getElementById("a3");
+const box4 = document.getElementById("b4");
+const box5 = document.getElementById("b5");
+const box6 = document.getElementById("b6");
+const box7 = document.getElementById("c7");
+const box8 = document.getElementById("c8");
+const box9 = document.getElementById("c9");
+
+const boxsArr = [
+  document.getElementById("a1"),
+  document.getElementById("a2"),
+  document.getElementById("a3"),
+  document.getElementById("b4"),
+  document.getElementById("b5"),
+  document.getElementById("b6"),
+  document.getElementById("c7"),
+  document.getElementById("c8"),
+  document.getElementById("c9"),
+];
 //-------------------Query Selectors---------------//
 let roc = document.createElement("div");
-roc.setAttribute("class", "rock1");
+roc.setAttribute("class", "rock1 rounded");
 roc.setAttribute("id", "one");
 
 let roc2 = document.createElement("div");
-roc2.setAttribute("class", "rock2");
+roc2.setAttribute("class", "rock2 rounded");
 roc2.setAttribute("id", "two");
 
 let roc3 = document.createElement("div");
-roc3.setAttribute("class", "rock3");
+roc3.setAttribute("class", "rock3 rounded");
 roc3.setAttribute("id", "three");
 
 let roc4 = document.createElement("div");
-roc4.setAttribute("class", "rock4");
+roc4.setAttribute("class", "rock4 square");
 roc4.setAttribute("id", "one");
 
 let roc5 = document.createElement("div");
-roc5.setAttribute("class", "rock5");
+roc5.setAttribute("class", "rock5 square");
 roc5.setAttribute("id", "two");
 
 let roc6 = document.createElement("div");
-roc6.setAttribute("class", "rock6");
+roc6.setAttribute("class", "rock6 square");
 roc6.setAttribute("id", "three");
 
 //----------------------------Functions-------------------//
@@ -99,17 +124,33 @@ const moveHereStateHandler = () => {
   moveHereState = true;
 };
 
+const winTheRound = () => {
+  // boxsArr.forEach((box) => {
+  //   console.log(box1.classList.contains(`.${currentClass}`));
+  // });
+  if (
+    box1.getElementsByTagName("div").length &&
+    box2.getElementsByTagName("div").length > 0 &&
+    box3.getElementsByTagName("div").length > 0
+  ) {
+    console.log(box1.getElementsByClassName(currentClass));
+    console.log(`winnn ${currentClass}`);
+  }
+};
+
 const moveHereStateHandlerSet = () => {
   moveHereState = false;
   if (currentPlayer === player1) {
-    console.log("player 1 turn");
-    currentPlayer = player2;
-    return;
-  } else {
     console.log("player 2 turn");
+    currentClass = player1Class;
+    currentPlayer = player2;
+  } else {
+    console.log("player 1 turn");
+    currentClass = player2Class;
     currentPlayer = player1;
   }
   // Check winner State
+  winTheRound();
 };
 
 // const startGame = () => {
