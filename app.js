@@ -128,51 +128,51 @@ const moveHereStateHandler = () => {
 // let two = document.getElementById("playerOne");
 // let three = document.getElementById("playerOne");
 // const player1RockArr = [one, two, three];
-const winTheRound = () => {
+const winTheRound = (tagName) => {
   if (
-    box1.getElementsByTagName("div").length &&
-    box2.getElementsByTagName("div").length > 0 &&
-    box3.getElementsByTagName("div").length > 0
+    box1.getElementsByTagName(tagName).length &&
+    box2.getElementsByTagName(tagName).length > 0 &&
+    box3.getElementsByTagName(tagName).length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
-    box4.getElementsByTagName("div").length > 0 &&
-    box5.getElementsByTagName("div").length > 0 &&
-    box6.getElementsByTagName("div").length > 0
+    box4.getElementsByTagName(tagName).length > 0 &&
+    box5.getElementsByTagName(tagName).length > 0 &&
+    box6.getElementsByTagName(tagName).length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
-    box7.getElementsByTagName("div").length > 0 &&
-    box8.getElementsByTagName("div").length > 0 &&
-    box9.getElementsByTagName("div").length > 0
+    box7.getElementsByTagName(tagName).length > 0 &&
+    box8.getElementsByTagName(tagName).length > 0 &&
+    box9.getElementsByTagName(tagName).length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
-    box1.getElementsByTagName("div").length > 0 &&
-    box4.getElementsByTagName("div").length > 0 &&
-    box7.getElementsByTagName("div").length > 0
+    box1.getElementsByTagName(tagName).length > 0 &&
+    box4.getElementsByTagName(tagName).length > 0 &&
+    box7.getElementsByTagName(tagName).length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
-    box8.getElementsByTagName("div").length > 0 &&
-    box5.getElementsByTagName("div").length > 0 &&
-    box2.getElementsByTagName("div").length > 0
+    box8.getElementsByTagName(tagName).length > 0 &&
+    box5.getElementsByTagName(tagName).length > 0 &&
+    box2.getElementsByTagName(tagName).length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
-    box9.getElementsByTagName("div").length > 0 &&
-    box6.getElementsByTagName("div").length > 0 &&
-    box3.getElementsByTagName("div").length > 0
+    box9.getElementsByTagName(tagName).length > 0 &&
+    box6.getElementsByTagName(tagName).length > 0 &&
+    box3.getElementsByTagName(tagName).length > 0
   ) {
     console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
@@ -183,16 +183,17 @@ const winTheRound = () => {
 const moveHereStateHandlerSet = () => {
   moveHereState = false;
   if (currentPlayer === player1) {
+    winTheRound("div");
     console.log("player 2 turn");
     currentClass = player1Class;
     currentPlayer = player2;
   } else {
+    winTheRound("p");
     console.log("player 1 turn");
     currentClass = player2Class;
     currentPlayer = player1;
   }
   // Check winner State
-  winTheRound();
 };
 
 // const startGame = () => {
