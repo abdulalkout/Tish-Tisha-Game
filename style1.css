@@ -1,0 +1,39 @@
+.title {
+  text-align: center;
+}
+
+.points {
+  margin-top: 50px;
+}
+
+.tishTishaBoard {
+  background-image: url("https://www.freeiconspng.com/thumbs/grid-png/graph-paper-grid-png-4.png");
+  display: grid;
+  grid-template-columns: repeat(3, 200px);
+  width: 600px;
+  height: 600px;
+  margin-left: 40%;
+  margin-top: 5%;
+  /* position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.tishTishaBox {
+  border: solid black 2px;
+}
+
+.rock {
+  display: flex;
+  justify-content: space-between;
+  /* position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+}
+
+.rockImg,
+.compRockImg {
+  width: 100px;
+}

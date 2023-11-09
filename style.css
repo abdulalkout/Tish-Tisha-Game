@@ -5,33 +5,72 @@
 .points {
   margin-top: 50px;
 }
+
+.pointsTrack {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  border: solid black;
+
+  margin: 1em;
+  display: flex;
+  flex-wrap: wrap;
+}
+.square {
+  border: solid black;
+  height: 90px;
+  width: 90px;
+}
+.bucket {
+  display: flex;
+  flex-direction: column;
+  border: solid blue;
+  height: auto;
+  display: flex;
+  justify-content: space-evenly;
+}
+.rock1,
+.rock2,
+.rock3 {
+  border: solid black;
+  border-radius: 50%;
+  height: 60px;
+  width: 60px;
+}
+
+.rock4,
+.rock5,
+.rock6 {
+  border: solid black;
+  /* border-radius: 50%; */
+  height: 60px;
+  width: 60px;
+}
+#one {
+  background-color: red;
+}
+#two {
+  background-color: blue;
+}
+#three {
+  background-color: green;
+}
+
+.gameScreen {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
 .tishTishaBoard {
+  background-image: url("https://www.freeiconspng.com/thumbs/grid-png/graph-paper-grid-png-4.png");
   display: grid;
   grid-template-columns: repeat(3, 200px);
   width: 600px;
   height: 600px;
-  margin-left: 40%;
-  margin-top: 5%;
-  /* position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
 }
-
 .tishTishaBox {
   border: solid black 2px;
-}
-
-.rock {
-  display: flex;
-  justify-content: space-between;
-  /* position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-}
-
-.rockImg,
-.compRockImg {
-  width: 100px;
 }
