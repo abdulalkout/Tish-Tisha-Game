@@ -77,17 +77,17 @@ let roc3 = document.createElement("div");
 roc3.setAttribute("class", "rock3 rounded");
 roc3.setAttribute("id", "three");
 
-let roc4 = document.createElement("div");
+let roc4 = document.createElement("p");
 roc4.setAttribute("class", "rock4 square");
-roc4.setAttribute("id", "one");
+roc4.setAttribute("id", "four");
 
-let roc5 = document.createElement("div");
+let roc5 = document.createElement("p");
 roc5.setAttribute("class", "rock5 square");
-roc5.setAttribute("id", "two");
+roc5.setAttribute("id", "five");
 
-let roc6 = document.createElement("div");
+let roc6 = document.createElement("p");
 roc6.setAttribute("class", "rock6 square");
-roc6.setAttribute("id", "three");
+roc6.setAttribute("id", "six");
 
 //----------------------------Functions-------------------//
 const setCurrent = (num) => {
@@ -124,17 +124,47 @@ const moveHereStateHandler = () => {
   moveHereState = true;
 };
 
+// let one = document.getElementById("playerOne");
+// let two = document.getElementById("playerOne");
+// let three = document.getElementById("playerOne");
+// const player1RockArr = [one, two, three];
 const winTheRound = () => {
-  // boxsArr.forEach((box) => {
-  //   console.log(box1.classList.contains(`.${currentClass}`));
-  // });
   if (
     box1.getElementsByTagName("div").length &&
     box2.getElementsByTagName("div").length > 0 &&
     box3.getElementsByTagName("div").length > 0
   ) {
+    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
-    console.log(`winnn ${currentClass}`);
+    console.log(`winnn ${player1}`);
+  }
+  if (
+    box4.getElementsByTagName("div").length > 0 &&
+    box5.getElementsByTagName("div").length > 0 &&
+    box6.getElementsByTagName("div").length > 0
+  ) {
+    console.log(one);
+    console.log(box1.getElementsByClassName(currentClass));
+    console.log(`winnn ${player1}`);
+  }
+  if (
+    box7.getElementsByTagName("div").length > 0 &&
+    box8.getElementsByTagName("div").length > 0 &&
+    box9.getElementsByTagName("div").length > 0
+  ) {
+    console.log(one);
+    console.log(box1.getElementsByClassName(currentClass));
+    console.log(`winnn ${player1}`);
+  }
+  //check Culomns
+  if (
+    box1.getElementsByTagName("div").length > 0 &&
+    box3.getElementsByTagName("div").length > 0 &&
+    box6.getElementsByTagName("div").length > 0
+  ) {
+    console.log(one);
+    console.log(box1.getElementsByClassName(currentClass));
+    console.log(`winnn ${player1}`);
   }
 };
 
