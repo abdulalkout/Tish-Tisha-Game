@@ -18,21 +18,21 @@
           id="Player1Rock1"
           src="https://i.gifer.com/1Vho.gif"
           alt="R1"
-          onclick="placeRock(`rock1`)"
+          onclick="moveRock1()"
         />
         <img
           class="rockImg"
           id="Player1Rock2"
           src="https://i.gifer.com/1Vho.gif"
           alt="R2"
-          onclick="placeRock(`rock2`)"
+          onclick="moveRock2()"
         />
         <img
           class="rockImg"
           id="Player1Rock3"
           src="https://i.gifer.com/1Vho.gif"
           alt="R3"
-          onclick="placeRock(`rock3`)"
+          onclick="moveRock3()"
         />
       </div>
       <div class="player2Rocks">
@@ -56,11 +56,9 @@
         />
       </div>
     </div>
-    <button id="placeTheRocks">Player1</button>
-    <!-- onclick="playerButton(`.rockImg`)" -->
-    <button id="nextPlayer" onclick="disableFunction()">Next</button>
-    <button id="placeTheRocks">Player2</button>
-    <!-- onclick="playerButton(`.compRockImg`)" -->
+    <button onclick="diableSelectPlacesHandler()">Start</button>
+    <button id="movePlayer" onclick="disableSelectMoveFunction()">move</button>
+
     <div class="tishTishaBoard">
       <div class="tishTishaBox" id="1"></div>
       <div class="tishTishaBox" id="2"></div>
@@ -72,6 +70,6 @@
       <div class="tishTishaBox" id="8"></div>
       <div class="tishTishaBox" id="9"></div>
     </div>
-    <script src="script4.js" async defer></script>
+    <script src="script6.js" async defer></script>
   </body>
 </html>
