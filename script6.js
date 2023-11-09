@@ -211,89 +211,81 @@ function rockMoveHandle(e) {
   console.log(rockToMove);
   //   e.stopPropagation();
   document.addEventListener("keydown", (evt) => {
-    switch (evt.key) {
-      case "1":
-        if (box1.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box1.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "2":
-        if (box2.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box2.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "3":
-        if (box3.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box3.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "4":
-        if (box4.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box4.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "5":
-        if (box5.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box5.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "6":
-        if (box6.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box6.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "7":
-        if (box7.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box7.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "8":
-        if (box8.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box8.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
-      case "9":
-        if (box9.getElementsByTagName("img").length) {
-          break;
-        } else {
-          box9.appendChild(rockToMove);
-          enableSelectMoveHandler = false;
-        }
-        break;
+    if (evt.key === "1") {
+      if (box1.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box1.appendChild(rockToMove);
+      }
+    } else if (evt.key === "2") {
+      if (box2.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box2.appendChild(rockToMove);
+      }
+    } else if (evt.key === "3") {
+      if (box3.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box3.appendChild(rockToMove);
+      }
+    } else if (evt.key === "4") {
+      if (box4.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box4.appendChild(rockToMove);
+      }
+    } else if (evt.key === "5") {
+      if (box5.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box5.appendChild(rockToMove);
+      }
+    } else if (evt.key === "6") {
+      if (box6.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box6.appendChild(rockToMove);
+      }
+    } else if (evt.key === "7") {
+      if (box7.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box7.appendChild(rockToMove);
+      }
+    } else if (evt.key === "8") {
+      if (box8.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box8.appendChild(rockToMove);
+      }
+    } else if (evt.key === "9") {
+      if (box9.getElementsByTagName("img").length) {
+        return;
+      } else {
+        enableSelectMoveHandler = false;
+        box9.appendChild(rockToMove);
+      }
     }
   });
 }
 // const nextPlayer = document.querySelector("#movePlayer");
 // console.log(nextPlayer);
 // nextPlayer.removeEventListener("click", moveRock1);
-
+const rocksArr = [rock1, rock2, rock3];
 function moveRock1() {
-  rock1.addEventListener("click", rockMoveHandle);
-  rock1.removeEventListener("click", moveRock1);
+  rocksArr.forEach((rock) => {
+    rock.addEventListener("click", rockMoveHandle);
+  });
+  //   rock1.addEventListener("click", rockMoveHandle);
 }
 function moveRock2() {
   rock2.addEventListener("click", rockMoveHandle);
@@ -303,7 +295,7 @@ function moveRock3() {
 }
 
 function disableSelectMoveFunction() {
-  enableSelectMoveHandler = false;
+  enableSelectMoveHandler = true;
 }
 
 // function moveRock(boxIdToMoveFrom, box, rockIdToMove) {
@@ -333,3 +325,78 @@ selectRocksPlaces();
 // }
 
 //---Code Googled--//
+
+// switch (evt.key) {
+//     case "1":
+//       if (box1.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box1.appendChild(rockToMove);
+//       }
+//       break;
+//     case "2":
+//       if (box2.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box2.appendChild(rockToMove);
+//       }
+//       break;
+//     case "3":
+//       if (box3.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box3.appendChild(rockToMove);
+//       }
+//       break;
+//     case "4":
+//       if (box4.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box4.appendChild(rockToMove);
+//       }
+//       break;
+//     case "5":
+//       if (box5.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box5.appendChild(rockToMove);
+//       }
+//       break;
+//     case "6":
+//       if (box6.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box6.appendChild(rockToMove);
+//       }
+//       break;
+//     case "7":
+//       if (box7.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box7.appendChild(rockToMove);
+//       }
+//       break;
+//     case "8":
+//       if (box8.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box8.appendChild(rockToMove);
+//       }
+//       break;
+//     case "9":
+//       if (box9.getElementsByTagName("img").length) {
+//         break;
+//       } else {
+//         enableSelectMoveHandler = false;
+//         box9.appendChild(rockToMove);
+//       }
+//       break;
+//   }
