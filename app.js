@@ -101,23 +101,31 @@ const moveHereStateHandler = () => {
 
 const moveHereStateHandlerSet = () => {
   moveHereState = false;
+  if (currentPlayer === player1) {
+    console.log("player 1 turn");
+    currentPlayer = player2;
+    return;
+  } else {
+    console.log("player 2 turn");
+    currentPlayer = player1;
+  }
   // Check winner State
 };
 
-const startGame = () => {
-  for (let i = 1; i <= 3; i++) {
-    if (currentPlayer === player1) {
-      console.log("player 1 turn");
-      currentPlayer === player2;
-      return;
-    } else {
-      console.log("player 1 turn");
-      currentPlayer === player1;
-    }
-    round++;
-  }
-};
+// const startGame = () => {
+//   for (let i = 1; i <= 3; i++) {
+//     if (currentPlayer === player1) {
+//       console.log("player 1 turn");
+//       currentPlayer = player2;
+//       return;
+//     } else {
+//       console.log("player 1 turn");
+//       currentPlayer = player1;
+//     }
+//     round++;
+//   }
+// };
 
-startGame();
+// startGame();
 
 //------------------------Event Listeners--------------//
