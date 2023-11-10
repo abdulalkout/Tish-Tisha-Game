@@ -3,11 +3,6 @@ class Player {
   constructor(name, score = 0) {
     this.name = name;
     this.score = score;
-    this.rocks = 3;
-  }
-
-  decreaseRocks() {
-    this.rocks = this.rocks - 1;
   }
 
   increaseScore() {
