@@ -121,6 +121,10 @@ const resetBoxs = () => {
   });
 };
 
+const restartButton = () => {
+  location.reload();
+};
+
 const theWinnerFunction = (tagName) => {
   if (tagName === "div") {
     console.log("Player1 wins");

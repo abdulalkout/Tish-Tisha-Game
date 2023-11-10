@@ -83,3 +83,7 @@
 .tishTishaBox {
   border: solid black 2px;
 }
+
+.restartButton {
+  display: block;
+}
