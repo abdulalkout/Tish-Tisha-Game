@@ -130,7 +130,7 @@ footer {
 }
 
 .playerBuutons {
-  background-color: antiquewhite;
+  background-color: rgba(141, 84, 10, 0.347);
   border-radius: 50%;
   font-size: large;
   font-weight: 700;
