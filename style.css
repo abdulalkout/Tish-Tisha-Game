@@ -14,7 +14,8 @@ footer {
   font-size: xx-large;
 }
 
-.points {
+.player1Points,
+.player2Points {
   margin-top: 50px;
   font-size: x-large;
 }

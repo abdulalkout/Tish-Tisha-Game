@@ -83,6 +83,8 @@ roc6.setAttribute("id", "six");
 const reset = document.querySelector(".restartButton");
 const gameUpdate = document.querySelector(".gameUpdate");
 const roundsUpdate = document.querySelector(".rounds");
+const playerOnePoints = document.querySelector(".player1Points");
+const playerTwoPoints = document.querySelector(".player2Points");
 
 //----------------------------Functions-------------------//
 const setCurrent = (num) => {
@@ -220,6 +222,11 @@ const moveHereStateHandlerSet = () => {
     currentClass = player2Class;
     currentPlayer = player1;
   }
+};
+
+const updateScreenScores = () => {
+  playerOnePoints.textContent = `${player1.name} : ${player1.score}/3`;
+  playerTwoPoints.textContent = `${player2.name} : ${player2.score}/3`;
 };
 
 // const startGame = () => {
