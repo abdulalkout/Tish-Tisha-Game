@@ -1,3 +1,14 @@
+body {
+  font-family: "Courier New", Courier, monospace;
+  color: antiquewhite;
+  background-color: rgb(21, 67, 21);
+  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrpURxRsko_Aa4z_DCyVkWyW2YeYzwmFOcsA&usqp=CAU"); */
+}
+
+footer {
+  margin-top: 20px;
+  text-align: center;
+}
 .title {
   text-align: center;
 }
@@ -26,10 +37,11 @@
 .bucket {
   display: flex;
   flex-direction: column;
-  border: solid blue;
+  border: solid aliceblue;
   height: auto;
   display: flex;
   justify-content: space-evenly;
+  background-color: antiquewhite;
 }
 .rock1,
 .rock2,
@@ -44,29 +56,45 @@
 .rock5,
 .rock6 {
   border: solid black;
-  /* border-radius: 50%; */
   height: 60px;
   width: 60px;
 }
+
+.rock1:hover,
+.rock2:hover,
+.rock3:hover,
+.rock4:hover,
+.rock5:hover,
+.rock6:hover {
+  cursor: pointer;
+}
+
 .rock1 {
-  background-color: red;
+  background-color: rgb(120, 36, 36);
 }
 .rock2 {
-  background-color: blue;
+  background-color: rgb(38, 38, 121);
 }
 .rock3 {
-  background-color: green;
+  background-color: black;
 }
 
 .rock4 {
-  background-color: red;
+  background-color: rgb(120, 36, 36);
 }
 .rock5 {
-  background-color: blue;
+  background-color: rgb(38, 38, 121);
 }
 .rock6 {
-  background-color: green;
+  background-color: black;
 }
+
+.rounded,
+.square {
+  margin-left: 30%;
+  margin-top: 30%;
+}
+
 .gameScreen {
   display: flex;
   justify-content: space-between;
@@ -84,6 +112,55 @@
   border: solid black 2px;
 }
 
+.tishTishaBox :hover {
+  cursor: pointer;
+}
+
+.playButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.playerBuutons {
+  background-color: antiquewhite;
+  border-radius: 50%;
+  font-size: large;
+  font-weight: 700;
+  height: 100px;
+}
+
 .restartButton {
+  display: none;
+  position: absolute;
+  padding: 2rem;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: antiquewhite;
+  border-radius: 50%;
+  font-size: x-large;
+  font-weight: 700;
+}
+
+button:hover {
+  background-color: rgb(21, 54, 54);
+  cursor: pointer;
+}
+
+.gameUpdate {
   display: block;
+  color: black;
+  font-size: x-large;
+  text-align: center;
+  padding-top: 10px;
+  font-weight: 600;
+  border-radius: 20%;
+  background-color: antiquewhite;
+  height: 300px;
+  width: 300px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }

@@ -23,8 +23,12 @@
         <div class="rock3" id="playerOne" onclick="setCurrent(3)"></div>
       </div>
       <div class="playButtons">
-        <button onclick="moveHereStateHandler()">Play Rock</button>
-        <button onclick="moveHereStateHandlerSet()">Set Rock</button>
+        <button class="playerBuutons" onclick="moveHereStateHandler()">
+          Choose Rock
+        </button>
+        <button class="playerBuutons" onclick="moveHereStateHandlerSet()">
+          Set Rock
+        </button>
       </div>
       <div class="tishTishaBoard">
         <div class="tishTishaBox" id="a1" onclick="moveHere(currentRock,'a1')">
@@ -56,8 +60,12 @@
         </div>
       </div>
       <div class="playButtons">
-        <button onclick="moveHereStateHandler()">Play Rock</button>
-        <button onclick="moveHereStateHandlerSet()">Set Rock</button>
+        <button class="playerBuutons" onclick="moveHereStateHandler()">
+          Choose Rock
+        </button>
+        <button class="playerBuutons" onclick="moveHereStateHandlerSet()">
+          Set Rock
+        </button>
       </div>
       <div class="bucket">
         <div class="rock4" id="playerTwo" onclick="setCurrent(4)"></div>
@@ -68,6 +76,11 @@
       </div>
     </div>
     <button class="restartButton" onclick="restartButton()">Restart</button>
+    <div class="gameUpdate">
+      Game Update
+      <button class="restartButton" onclick="restartButton()">Restart</button>
+    </div>
+    <footer>Designed by Abdul</footer>
     <script src="app.js" async defer></script>
   </body>
 </html>

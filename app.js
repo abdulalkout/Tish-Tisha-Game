@@ -79,6 +79,10 @@ let roc6 = document.createElement("p");
 roc6.setAttribute("class", "rock6 square");
 roc6.setAttribute("id", "six");
 
+//---- Screen Query Selectors ---//
+const reset = document.querySelector(".restartButton");
+const gameUpdate = document.querySelector(".gameUpdate");
+
 //----------------------------Functions-------------------//
 const setCurrent = (num) => {
   if (num === 1) {
@@ -125,20 +129,33 @@ const restartButton = () => {
   location.reload();
 };
 
+const updateGameText = (txt) => {
+  let text = document.createElement("p");
+  text.textContent = txt;
+  gameUpdate.textContent = "Game Update";
+  gameUpdate.appendChild(text);
+};
+
 const theWinnerFunction = (tagName) => {
   if (tagName === "div") {
-    console.log("Player1 wins");
+    // console.log("Player1 won ");
+    updateGameText("player 1 won the round");
     const player1RoundWon = setTimeout(resetBoxs, 2000);
     player1.increaseScore();
     if (player1.score === 2) {
-      console.log("player 1 win the game");
+      // console.log("player 1 win the game");
+      updateGameText("player 1 won the game");
+      reset.style.display = "block";
     }
   } else {
-    console.log("Player 2 Wins");
+    // console.log("Player 2 Wins");
+    updateGameText("player 2 won the round");
     const player2RoundWon = setTimeout(resetBoxs, 2000);
     player2.increaseScore();
     if (player2.score === 2) {
-      console.log("player 2 win the game");
+      // console.log("player 2 won the game");
+      updateGameText("player 2 won the Game");
+      reset.style.display = "block";
     }
   }
 };
@@ -189,11 +206,13 @@ const moveHereStateHandlerSet = () => {
   if (currentPlayer === player1) {
     winTheRound("div");
     console.log("player 2 turn");
+    updateGameText("player 2 turn");
     currentClass = player1Class;
     currentPlayer = player2;
   } else {
     winTheRound("p");
     console.log("player 1 turn");
+    updateGameText("player 1 turn");
     currentClass = player2Class;
     currentPlayer = player1;
   }
