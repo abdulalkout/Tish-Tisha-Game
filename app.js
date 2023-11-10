@@ -19,7 +19,7 @@ class Rock {
 
   generateRock() {
     let newRock = document.createElement(this.elementType);
-    newRock.setAttribute("class", this.elementClass);
+    newRock.setAttribute("class", `${this.elementClass} rocks`);
     newRock.setAttribute("id", this.elementId);
     return newRock;
   }
