@@ -176,7 +176,7 @@ button:hover {
   padding-top: 10px;
   font-weight: 600;
   border-radius: 20%;
-  background-color: antiquewhite;
+  background-color: rgb(164, 96, 7);
   height: 100px;
   width: 300px;
   position: absolute;
@@ -192,7 +192,7 @@ button:hover {
   text-align: left;
   font-weight: 500;
   border-radius: 20%;
-  background-color: antiquewhite;
+  background-color: rgb(164, 96, 7);
   height: 450px;
   width: 500px;
   position: absolute;
