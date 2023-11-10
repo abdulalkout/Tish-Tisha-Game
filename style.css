@@ -7,7 +7,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrpURxRsko_Aa4z_DCyVkWyW2YeYzwmFOcsA&usqp=CAU"); */
 }
 
 footer {
@@ -45,11 +44,12 @@ footer {
 .bucket {
   display: flex;
   flex-direction: column;
-  border: solid aliceblue;
+  border: solid black;
   height: auto;
   display: flex;
   justify-content: space-evenly;
-  background-color: antiquewhite;
+  background-color: black;
+  background-image: url("https://cdn1.vectorstock.com/i/1000x1000/70/00/cartoon-square-background-with-wooden-boards-vector-15037000.jpg");
 }
 .rock1,
 .rock2,
