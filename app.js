@@ -15,24 +15,6 @@ class Player {
   }
 }
 
-class Computer {
-  constructor(name, score, rocks = 3) {
-    this.name = name;
-    this.score = score;
-    this.rocks = rocks;
-  }
-
-  PlaceTheRocks() {
-    let numberOfBox = Math.floor(Math.random() * 9) + 1;
-    // const rockImgSelector = document.querySelector("")
-    // rockImgSelector.appendChild(rockImg);
-  }
-
-  increaseScore() {
-    this.score++;
-  }
-}
-
 class Rock {
   constructor(elementType, elementClass, elementId) {
     this.elementType = elementType;
@@ -47,6 +29,7 @@ class Rock {
     return newRock;
   }
 }
+
 //-----------------Initiate Variables -------------------------//
 const player1 = new Player("Abdul");
 const player2 = new Player("Opponent");
