@@ -82,6 +82,7 @@ roc6.setAttribute("id", "six");
 //---- Screen Query Selectors ---//
 const reset = document.querySelector(".restartButton");
 const gameUpdate = document.querySelector(".gameUpdate");
+const roundsUpdate = document.querySelector(".rounds");
 
 //----------------------------Functions-------------------//
 const setCurrent = (num) => {
@@ -130,6 +131,7 @@ const restartButton = () => {
 };
 
 const updateGameText = (txt) => {
+  gameUpdate.style.display = "block";
   let text = document.createElement("p");
   text.textContent = txt;
   gameUpdate.textContent = "Game Update";
@@ -206,7 +208,7 @@ const moveHereStateHandlerSet = () => {
   if (currentPlayer === player1) {
     winTheRound("div");
     console.log("player 2 turn");
-    updateGameText("player 2 turn");
+
     currentClass = player1Class;
     currentPlayer = player2;
   } else {

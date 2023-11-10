@@ -149,7 +149,7 @@ button:hover {
 }
 
 .gameUpdate {
-  display: block;
+  display: none;
   color: black;
   font-size: x-large;
   text-align: center;
