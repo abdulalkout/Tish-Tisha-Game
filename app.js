@@ -125,7 +125,15 @@ const moveHere = (whichRock, id) => {
     return;
   }
   let currentMove = document.querySelector(`#${id}`);
-  currentMove.append(whichRock);
+  let playerTry = 0;
+  if (
+    currentMove.getElementsByTagName("div").length ||
+    currentMove.getElementsByTagName("p").length
+  ) {
+    console.log("cant do that");
+  } else {
+    currentMove.append(whichRock);
+  }
 };
 
 const moveHereStateHandler = () => {
