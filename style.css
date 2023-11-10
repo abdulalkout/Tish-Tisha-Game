@@ -133,6 +133,14 @@ footer {
   height: 100px;
 }
 
+.quit {
+  background-color: rgb(138, 28, 28);
+  border-radius: 50%;
+  font-size: large;
+  font-weight: 700;
+  height: 100px;
+}
+
 .restartButton {
   display: none;
   position: absolute;
@@ -171,4 +179,30 @@ button:hover {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.instructions {
+  display: block;
+  color: black;
+  font-size: x-large;
+  text-align: left;
+  padding-left: 80px;
+  padding-top: 50px;
+  font-weight: 500;
+  border-radius: 20%;
+  background-color: antiquewhite;
+  height: 400px;
+  width: 500px;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+strong {
+  font-weight: 900;
+}
+
+#gameRules {
+  display: block;
 }

@@ -142,6 +142,15 @@ const restartButton = () => {
   location.reload();
 };
 
+const quitButton = (quiterNumber) => {
+  if (quiterNumber === 1) {
+    updateGameText(`${player2.name} won the game`);
+  } else if (quiterNumber === 2) {
+    updateGameText(`${player1.name} won the game`);
+  }
+  const restartTimeout = setTimeout(restartButton, 2000);
+};
+
 const updateGameText = (txt) => {
   gameUpdate.style.display = "block";
   let text = document.createElement("p");
@@ -241,21 +250,5 @@ const moveHereStateHandlerSet = () => {
 };
 
 updateScreenScores();
-
-// const startGame = () => {
-//   for (let i = 1; i <= 3; i++) {
-//     if (currentPlayer === player1) {
-//       console.log("player 1 turn");
-//       currentPlayer = player2;
-//       return;
-//     } else {
-//       console.log("player 1 turn");
-//       currentPlayer = player1;
-//     }
-//     round++;
-//   }
-// };
-
-// startGame();
 
 //------------------------Event Listeners--------------//
