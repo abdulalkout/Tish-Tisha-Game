@@ -152,7 +152,10 @@ footer {
   top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: antiquewhite;
+  background-color: rgb(143, 83, 4);
+  background-image: url("https://cdn1.vectorstock.com/i/1000x1000/70/00/cartoon-square-background-with-wooden-boards-vector-15037000.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   border-radius: 50%;
   font-size: x-large;
   font-weight: 700;
@@ -176,7 +179,7 @@ button:hover {
   padding-top: 10px;
   font-weight: 600;
   border-radius: 20%;
-  background-color: rgb(164, 96, 7);
+  background-color: rgb(143, 83, 4);
   height: 100px;
   width: 300px;
   position: absolute;
@@ -192,7 +195,7 @@ button:hover {
   text-align: left;
   font-weight: 500;
   border-radius: 20%;
-  background-color: rgb(164, 96, 7);
+  background-color: rgb(143, 83, 4);
   height: 450px;
   width: 500px;
   position: absolute;
