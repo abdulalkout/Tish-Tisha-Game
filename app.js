@@ -71,38 +71,23 @@ const box9 = document.getElementById("c3");
 const boxsArr = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 
 //-------------------Query Selectors---------------//
-// let roc = document.createElement("div");
-// roc.setAttribute("class", "rock1");
-// roc.setAttribute("id", "one");
-
 let roc1 = new Rock("div", "rock1", "one");
 let rock1 = roc1.generateRock();
-
-// let roc2 = document.createElement("div");
-// roc2.setAttribute("class", "rock2");
-// roc2.setAttribute("id", "two");
 
 let roc2 = new Rock("div", "rock2", "two");
 let rock2 = roc2.generateRock();
 
-// let roc3 = document.createElement("div");
-// roc3.setAttribute("class", "rock3");
-// roc3.setAttribute("id", "three");
-
 let roc3 = new Rock("div", "rock3", "three");
 let rock3 = roc3.generateRock();
 
-let roc4 = document.createElement("p");
-roc4.setAttribute("class", "rock4 square");
-roc4.setAttribute("id", "four");
+let roc4 = new Rock("p", "rock4", "four");
+let rock4 = roc4.generateRock();
 
-let roc5 = document.createElement("p");
-roc5.setAttribute("class", "rock5 square");
-roc5.setAttribute("id", "five");
+let roc5 = new Rock("p", "rock5", "five");
+let rock5 = roc5.generateRock();
 
-let roc6 = document.createElement("p");
-roc6.setAttribute("class", "rock6 square");
-roc6.setAttribute("id", "six");
+let roc6 = new Rock("p", "rock6", "six");
+let rock6 = roc6.generateRock();
 
 //---- Screen Query Selectors ---//
 const reset = document.querySelector(".restartButton");
@@ -123,13 +108,13 @@ const setCurrent = (num) => {
     currentRock = rock3;
   }
   if (num === 4) {
-    currentRock = roc4;
+    currentRock = rock4;
   }
   if (num === 5) {
-    currentRock = roc5;
+    currentRock = rock5;
   }
   if (num === 6) {
-    currentRock = roc6;
+    currentRock = rock6;
   }
 };
 
