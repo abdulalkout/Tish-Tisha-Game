@@ -28,13 +28,10 @@ class Rock {
 //-----------------Initiate Variables -------------------------//
 const player1 = new Player("Abdul");
 const player2 = new Player("Opponent");
-const player1Class = "rounded";
-const player2Class = "square";
 let currentRock;
 let round = 1;
 let currentPlayer = player1;
 let moveHereState = false;
-let currentClass = player1Class;
 
 const box1 = document.getElementById("a1");
 const box2 = document.getElementById("a2");
@@ -197,7 +194,6 @@ const winTheRound = (tagName) => {
     box8.getElementsByTagName(tagName).length > 0 &&
     box9.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(box1.getElementsByClassName(currentClass));
     theWinnerFunction(tagName);
   } else if (
     box1.getElementsByTagName(tagName).length > 0 &&
@@ -226,13 +222,11 @@ const moveHereStateHandlerSet = () => {
     winTheRound("div");
     console.log("player 2 turn");
     roundsUpdate.textContent = `${player2.name} turn`;
-    currentClass = player1Class;
     currentPlayer = player2;
   } else {
     winTheRound("p");
     console.log("player 1 turn");
     roundsUpdate.textContent = `${player1.name} turn`;
-    currentClass = player2Class;
     currentPlayer = player1;
   }
 };
