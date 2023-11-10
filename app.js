@@ -95,6 +95,7 @@ const gameUpdate = document.querySelector(".gameUpdate");
 const roundsUpdate = document.querySelector(".rounds");
 const playerOnePoints = document.querySelector(".player1Points");
 const playerTwoPoints = document.querySelector(".player2Points");
+const gameRules = document.querySelector("#gameRules");
 
 //----------------------------Functions-------------------//
 const setCurrent = (num) => {
@@ -252,3 +253,11 @@ const moveHereStateHandlerSet = () => {
 updateScreenScores();
 
 //------------------------Event Listeners--------------//
+document.addEventListener("keydown", (evt) => {
+  switch (evt.key) {
+    case "Enter":
+      gameRules.style.display = "none";
+    case "n":
+      return;
+  }
+});

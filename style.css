@@ -206,3 +206,9 @@ strong {
 #gameRules {
   display: block;
 }
+
+#gameInstructions {
+  padding-top: 20px;
+  padding-left: 40px;
+  display: block;
+}
