@@ -186,12 +186,11 @@ button:hover {
   color: black;
   font-size: x-large;
   text-align: left;
-  padding-left: 80px;
-  padding-top: 50px;
+
   font-weight: 500;
   border-radius: 20%;
   background-color: antiquewhite;
-  height: 400px;
+  height: 450px;
   width: 500px;
   position: absolute;
   top: 70%;
@@ -205,10 +204,12 @@ strong {
 
 #gameRules {
   display: block;
+  padding-left: 45px;
+  padding-top: 70px;
 }
 
 #gameInstructions {
-  padding-top: 20px;
-  padding-left: 40px;
+  padding-top: 40px;
+  padding-left: 50px;
   display: block;
 }
