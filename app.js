@@ -138,24 +138,26 @@ const updateGameText = (txt) => {
   gameUpdate.appendChild(text);
 };
 
+const removeGameUpdate = () => {
+  gameUpdate.style.display = "none";
+};
+
 const theWinnerFunction = (tagName) => {
   if (tagName === "div") {
-    // console.log("Player1 won ");
     updateGameText(`${player1.name} won the round`);
-    const player1RoundWon = setTimeout(resetBoxs, 2000);
+    const player1RoundWon = setTimeout(resetBoxs, 1000);
+    let removeUpdateTimeout = setTimeout(removeGameUpdate, 2000);
     player1.increaseScore();
     if (player1.score === 2) {
-      // console.log("player 1 win the game");
       updateGameText(`${player1.name} won the game`);
       reset.style.display = "block";
     }
   } else {
-    // console.log("Player 2 Wins");
     updateGameText(`${player2.name} won the round`);
-    const player2RoundWon = setTimeout(resetBoxs, 2000);
+    const player2RoundWon = setTimeout(resetBoxs, 1000);
+    let removeUpdateTimeout = setTimeout(removeGameUpdate, 2000);
     player2.increaseScore();
     if (player2.score === 2) {
-      // console.log("player 2 won the game");
       updateGameText(`${player2.name} won the game`);
       reset.style.display = "block";
     }
