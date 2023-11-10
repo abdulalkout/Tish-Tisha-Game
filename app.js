@@ -32,6 +32,21 @@ class Computer {
     this.score++;
   }
 }
+
+class Rock {
+  constructor(elementType, elementClass, elementId) {
+    this.elementType = elementType;
+    this.elementClass = elementClass;
+    this.elementId = elementId;
+  }
+
+  generateRock() {
+    let newRock = document.createElement(this.elementType);
+    newRock.setAttribute("class", this.elementClass);
+    newRock.setAttribute("id", this.elementId);
+    return newRock;
+  }
+}
 //-----------------Initiate Variables -------------------------//
 const player1 = new Player("Abdul");
 const player2 = new Player("Opponent");
@@ -54,18 +69,28 @@ const box8 = document.getElementById("c2");
 const box9 = document.getElementById("c3");
 
 const boxsArr = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
+
 //-------------------Query Selectors---------------//
-let roc = document.createElement("div");
-roc.setAttribute("class", "rock1 rounded");
-roc.setAttribute("id", "one");
+// let roc = document.createElement("div");
+// roc.setAttribute("class", "rock1");
+// roc.setAttribute("id", "one");
 
-let roc2 = document.createElement("div");
-roc2.setAttribute("class", "rock2 rounded");
-roc2.setAttribute("id", "two");
+let roc1 = new Rock("div", "rock1", "one");
+let rock1 = roc1.generateRock();
 
-let roc3 = document.createElement("div");
-roc3.setAttribute("class", "rock3 rounded");
-roc3.setAttribute("id", "three");
+// let roc2 = document.createElement("div");
+// roc2.setAttribute("class", "rock2");
+// roc2.setAttribute("id", "two");
+
+let roc2 = new Rock("div", "rock2", "two");
+let rock2 = roc2.generateRock();
+
+// let roc3 = document.createElement("div");
+// roc3.setAttribute("class", "rock3");
+// roc3.setAttribute("id", "three");
+
+let roc3 = new Rock("div", "rock3", "three");
+let rock3 = roc3.generateRock();
 
 let roc4 = document.createElement("p");
 roc4.setAttribute("class", "rock4 square");
@@ -89,13 +114,13 @@ const playerTwoPoints = document.querySelector(".player2Points");
 //----------------------------Functions-------------------//
 const setCurrent = (num) => {
   if (num === 1) {
-    currentRock = roc;
+    currentRock = rock1;
   }
   if (num === 2) {
-    currentRock = roc2;
+    currentRock = rock2;
   }
   if (num === 3) {
-    currentRock = roc3;
+    currentRock = rock3;
   }
   if (num === 4) {
     currentRock = roc4;
@@ -144,6 +169,11 @@ const removeGameUpdate = () => {
   gameUpdate.style.display = "none";
 };
 
+const updateScreenScores = () => {
+  playerOnePoints.textContent = `${player1.name} : ${player1.score}/3`;
+  playerTwoPoints.textContent = `${player2.name} : ${player2.score}/3`;
+};
+
 const theWinnerFunction = (tagName) => {
   if (tagName === "div") {
     updateGameText(`${player1.name} won the round`);
@@ -164,6 +194,7 @@ const theWinnerFunction = (tagName) => {
       reset.style.display = "block";
     }
   }
+  updateScreenScores();
 };
 
 const winTheRound = (tagName) => {
@@ -224,10 +255,7 @@ const moveHereStateHandlerSet = () => {
   }
 };
 
-const updateScreenScores = () => {
-  playerOnePoints.textContent = `${player1.name} : ${player1.score}/3`;
-  playerTwoPoints.textContent = `${player2.name} : ${player2.score}/3`;
-};
+updateScreenScores();
 
 // const startGame = () => {
 //   for (let i = 1; i <= 3; i++) {
