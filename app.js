@@ -124,25 +124,32 @@ const moveHereStateHandler = () => {
   moveHereState = true;
 };
 
-// let one = document.getElementById("playerOne");
-// let two = document.getElementById("playerOne");
-// let three = document.getElementById("playerOne");
-// const player1RockArr = [one, two, three];
 const winTheRound = (tagName) => {
   if (
     box1.getElementsByTagName(tagName).length &&
     box2.getElementsByTagName(tagName).length > 0 &&
     box3.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
-    console.log(`winnn ${player1}`);
+
+    if (tagName === "div") {
+      console.log("Player1 wins");
+      player1.increaseScore();
+      if (player1.score === 2) {
+        console.log("player 1 win the game");
+      }
+    } else {
+      console.log("Player 2 Wins");
+      player2.increaseScore();
+      if (player2.score === 2) {
+        console.log("player 2 win the game");
+      }
+    }
   } else if (
     box4.getElementsByTagName(tagName).length > 0 &&
     box5.getElementsByTagName(tagName).length > 0 &&
     box6.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
@@ -150,7 +157,6 @@ const winTheRound = (tagName) => {
     box8.getElementsByTagName(tagName).length > 0 &&
     box9.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
@@ -158,7 +164,6 @@ const winTheRound = (tagName) => {
     box4.getElementsByTagName(tagName).length > 0 &&
     box7.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
@@ -166,7 +171,6 @@ const winTheRound = (tagName) => {
     box5.getElementsByTagName(tagName).length > 0 &&
     box2.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   } else if (
@@ -174,7 +178,6 @@ const winTheRound = (tagName) => {
     box6.getElementsByTagName(tagName).length > 0 &&
     box3.getElementsByTagName(tagName).length > 0
   ) {
-    console.log(one);
     console.log(box1.getElementsByClassName(currentClass));
     console.log(`winnn ${player1}`);
   }
