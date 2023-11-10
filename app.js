@@ -53,17 +53,7 @@ const box7 = document.getElementById("c1");
 const box8 = document.getElementById("c2");
 const box9 = document.getElementById("c3");
 
-const boxsArr = [
-  document.getElementById("a1"),
-  document.getElementById("a2"),
-  document.getElementById("a3"),
-  document.getElementById("b4"),
-  document.getElementById("b5"),
-  document.getElementById("b6"),
-  document.getElementById("c7"),
-  document.getElementById("c8"),
-  document.getElementById("c9"),
-];
+const boxsArr = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 //-------------------Query Selectors---------------//
 let roc = document.createElement("div");
 roc.setAttribute("class", "rock1 rounded");
@@ -123,15 +113,25 @@ const moveHereStateHandler = () => {
   moveHereState = true;
 };
 
+const resetBoxs = () => {
+  let i = 1;
+  boxsArr.forEach((box) => {
+    box.textContent = i;
+    i++;
+  });
+};
+
 const theWinnerFunction = (tagName) => {
   if (tagName === "div") {
     console.log("Player1 wins");
+    const player1RoundWon = setTimeout(resetBoxs, 2000);
     player1.increaseScore();
     if (player1.score === 2) {
       console.log("player 1 win the game");
     }
   } else {
     console.log("Player 2 Wins");
+    const player2RoundWon = setTimeout(resetBoxs, 2000);
     player2.increaseScore();
     if (player2.score === 2) {
       console.log("player 2 win the game");
