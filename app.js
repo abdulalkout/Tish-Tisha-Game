@@ -34,7 +34,7 @@ class Computer {
 }
 //-----------------Initiate Variables -------------------------//
 const player1 = new Player("Abdul");
-const player2 = new Player("Player");
+const player2 = new Player("Opponent");
 const player1Class = "rounded";
 const player2Class = "square";
 let currentRock;
@@ -141,22 +141,22 @@ const updateGameText = (txt) => {
 const theWinnerFunction = (tagName) => {
   if (tagName === "div") {
     // console.log("Player1 won ");
-    updateGameText("player 1 won the round");
+    updateGameText(`${player1.name} won the round`);
     const player1RoundWon = setTimeout(resetBoxs, 2000);
     player1.increaseScore();
     if (player1.score === 2) {
       // console.log("player 1 win the game");
-      updateGameText("player 1 won the game");
+      updateGameText(`${player1.name} won the game`);
       reset.style.display = "block";
     }
   } else {
     // console.log("Player 2 Wins");
-    updateGameText("player 2 won the round");
+    updateGameText(`${player2.name} won the round`);
     const player2RoundWon = setTimeout(resetBoxs, 2000);
     player2.increaseScore();
     if (player2.score === 2) {
       // console.log("player 2 won the game");
-      updateGameText("player 2 won the Game");
+      updateGameText(`${player2.name} won the game`);
       reset.style.display = "block";
     }
   }
@@ -208,13 +208,13 @@ const moveHereStateHandlerSet = () => {
   if (currentPlayer === player1) {
     winTheRound("div");
     console.log("player 2 turn");
-
+    roundsUpdate.textContent = `${player2.name} turn`;
     currentClass = player1Class;
     currentPlayer = player2;
   } else {
     winTheRound("p");
     console.log("player 1 turn");
-    updateGameText("player 1 turn");
+    roundsUpdate.textContent = `${player1.name} turn`;
     currentClass = player2Class;
     currentPlayer = player1;
   }

@@ -11,10 +11,12 @@ footer {
 }
 .title {
   text-align: center;
+  font-size: xx-large;
 }
 
 .points {
   margin-top: 50px;
+  font-size: x-large;
 }
 
 .pointsTrack {
@@ -148,6 +150,11 @@ button:hover {
   cursor: pointer;
 }
 
+.rounds {
+  margin-top: 70px;
+  font-size: large;
+}
+
 .gameUpdate {
   display: none;
   color: black;
@@ -157,7 +164,7 @@ button:hover {
   font-weight: 600;
   border-radius: 20%;
   background-color: antiquewhite;
-  height: 300px;
+  height: 100px;
   width: 300px;
   position: absolute;
   top: 70%;
