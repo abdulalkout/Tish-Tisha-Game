@@ -224,3 +224,7 @@ strong {
   padding-left: 50px;
   display: block;
 }
+
+.playersName {
+  text-align: center;
+}

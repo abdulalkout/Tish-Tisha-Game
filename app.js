@@ -26,7 +26,7 @@ class Rock {
 }
 
 //-----------------Initiate Variables -------------------------//
-const player1 = new Player("Abdul");
+const player1 = new Player("Host");
 const player2 = new Player("Opponent");
 let currentRock;
 let round = 1;
@@ -74,6 +74,13 @@ const gameRules = document.querySelector("#gameRules");
 const gameInstructions = document.querySelector("#gameInstructions");
 
 //----------------------------Functions-------------------//
+// const createPlayers = (name1, name2) => {
+//   const inputPlayer1 = document.querySelector(".inputPlayer1");
+//   const inputPlayer2 = document.querySelector(".inputPlayer2");
+//   console.log(inputPlayer1.textContent);
+//   let player1 = new Player(name1);
+//   let player2 = new Player(name2);
+// };
 const setCurrent = (num) => {
   if (num === 1) {
     currentRock = rock1;
