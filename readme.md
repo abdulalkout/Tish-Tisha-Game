@@ -46,6 +46,6 @@ Tish-Tisha is designed to foster strategic thinking skills in children. It intro
 
 Enjoy the challenge, have fun, and let those young minds shine!
 
-![Tish-Tisha Game](./img/tish-tisha-game.png)
+![Tish-Tisha Game](./img/tish-tisha-display.png)
 
 ---
