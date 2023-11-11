@@ -45,7 +45,7 @@ const box9 = document.getElementById("c3");
 
 const boxsArr = [box1, box2, box3, box4, box5, box6, box7, box8, box9];
 
-//-------------------Query Selectors---------------//
+//-----------------------------Query Selectors----------------------//
 let roc1 = new Rock("div", "rock1", "one");
 let rock1 = roc1.generateRock();
 
@@ -102,7 +102,7 @@ const setCurrent = (num) => {
   }
 };
 
-const moveHere = (whichRock, id) => {
+const moveHere = (currentRockChosen, id) => {
   if (!moveHereState) {
     return;
   }
@@ -114,7 +114,7 @@ const moveHere = (whichRock, id) => {
   ) {
     console.log("cant do that");
   } else {
-    currentMove.append(whichRock);
+    currentMove.append(currentRockChosen);
   }
 };
 
