@@ -25,9 +25,9 @@ class Rock {
   }
 }
 
-//-----------------Initiate Variables -------------------------//
-const player1 = new Player("Host");
-const player2 = new Player("Opponent");
+//---------------------------Initiate Variables ------------------------------//
+let player1 = new Player("Host");
+let player2 = new Player("Opponent");
 let currentRock;
 let round = 1;
 let currentPlayer = player1;
@@ -72,15 +72,21 @@ const playerOnePoints = document.querySelector(".player1Points");
 const playerTwoPoints = document.querySelector(".player2Points");
 const gameRules = document.querySelector("#gameRules");
 const gameInstructions = document.querySelector("#gameInstructions");
+const playersName = document.querySelector("#playersName");
 
-//----------------------------Functions-------------------//
-// const createPlayers = (name1, name2) => {
-//   const inputPlayer1 = document.querySelector(".inputPlayer1");
-//   const inputPlayer2 = document.querySelector(".inputPlayer2");
-//   console.log(inputPlayer1.textContent);
-//   let player1 = new Player(name1);
-//   let player2 = new Player(name2);
-// };
+//----------------------------Functions-------------------------------//
+const createPlayers = () => {
+  const inputPlayer1 = document.querySelector(".inputPlayer1").value;
+  const inputPlayer2 = document.querySelector(".inputPlayer2").value;
+  const playersName = document.querySelector(".playersName");
+  player1 = new Player(inputPlayer1);
+  player2 = new Player(inputPlayer2);
+  playersName.style.display = "none";
+  updateScreenScores();
+  roundsUpdate.textContent = `${player2.name} turn`;
+  return player1, player2;
+};
+
 const setCurrent = (num) => {
   if (num === 1) {
     currentRock = rock1;
@@ -246,7 +252,10 @@ document.addEventListener("keydown", (evt) => {
     case "Enter":
       gameRules.style.display = "none";
       gameInstructions.style.display = "none";
+      playersName.style.display = "none";
     case "n":
       gameRules.style.display = "none";
+    case "m":
+      playersName.style.display = "none";
   }
 });

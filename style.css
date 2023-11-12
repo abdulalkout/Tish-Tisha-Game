@@ -226,5 +226,8 @@ strong {
 }
 
 .playersName {
+  display: block;
+  padding-top: 70px;
+  width: 600px;
   text-align: center;
 }
