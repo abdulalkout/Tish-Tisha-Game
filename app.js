@@ -113,12 +113,12 @@ const moveHere = (currentRockChosen, id) => {
     return;
   }
   let currentMove = document.querySelector(`#${id}`);
-  let playerTry = 0;
   if (
     currentMove.getElementsByTagName("div").length ||
     currentMove.getElementsByTagName("p").length
   ) {
-    console.log("cant do that");
+    updateGameText(`cant do that`);
+    const badMoveTimeout = setTimeout(removeGameUpdate, 1000);
   } else {
     currentMove.append(currentRockChosen);
   }
@@ -233,12 +233,10 @@ const moveHereStateHandlerSet = () => {
   moveHereState = false;
   if (currentPlayer === player1) {
     winTheRound("div");
-    console.log("player 2 turn");
     roundsUpdate.textContent = `${player2.name} turn`;
     currentPlayer = player2;
   } else {
     winTheRound("p");
-    console.log("player 1 turn");
     roundsUpdate.textContent = `${player1.name} turn`;
     currentPlayer = player1;
   }
@@ -246,7 +244,7 @@ const moveHereStateHandlerSet = () => {
 
 updateScreenScores();
 
-//------------------------Event Listeners--------------//
+//------------------------------Event Listeners--------------------------//
 document.addEventListener("keydown", (evt) => {
   switch (evt.key) {
     case "Enter":
